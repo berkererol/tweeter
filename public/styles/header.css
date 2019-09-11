@@ -1,0 +1,50 @@
+#avatar {
+  width: 120px;
+  margin-top: 2em;
+  
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* background-color: #ff2600;
+  background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png"); */
+}
+
+main {
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+}
+
+.profile-section-avatar {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+
+.profile-section-user span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* margin-top: 1em; */
+  margin-bottom: 1em;
+  font-family: "Delius Unicase";
+  font-size: 1.2em;
+  color: white;
+}
+
+span.login-info {
+  margin-top: 1em;
+  /* background-color: #D81E1E; */
+  font-family: "Roboto";
+  font-size: 1.2em;
+  text-decoration: underline;
+  padding: 1em;
+  border-radius: 1em;
+}
+

@@ -1,32 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <!-- Delius Unicase and Roboto fonts from Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Delius+Unicase:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-  <body>
 
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-    </main>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-  </body>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+
+  <nav id="nav-bar">
+    <div id="left-nav">
+      <img class="nav-bar-logo" id="nav-logo" src="/images/bird.png" alt="tweeter logo">
+      <span class="header">Tweeter <sup id="superior-text">&#8482</sup></span>
+    </div>
+    <div id="right-nav">
+      <button type="button" class="button" input="click">
+        <span class="name">
+          <b>Write</b> a new tweet
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page-specific (main) content here -->
+  <!-- Profile Section -->
+  <header class="profile-section">
+    <div class="profile-section-avatar">
+      <img id="avatar" src="/images/profile-hex.png" alt="profile-picture">
+    </div>
+    <div class="profile-section-user">
+      <span class="login-info"><strong>logged in as<strong> Berker</span>
+    </div>
+  </header>
+
+
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet 🐤 </h2>
+      <form action="/tweets" method="POST">
+        <textarea id="tweet-text-area" name="text" placeholder="What are you humming about?"> </textarea>
+        <input type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
+    </section>
+    <section id="tweet-container"> </section>
+
+  </main>
+
+</body>
+
 </html>
