@@ -62,7 +62,7 @@ button span.name{
 
 @media only screen and (max-width: 1025px) {
   main.container {
-    width: 80%;
+    width: 60%;
     margin: auto;
   }
 
