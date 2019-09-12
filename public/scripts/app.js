@@ -1,12 +1,5 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-//DOCUMENT READY ----------------------------------------------
 $(document).ready((event) => {
-
+  //converts miliseconds to conventional time measures.
   const createdAt = function(time) {
     const timeDiff = Date.now() - time;
     if (timeDiff >= 31556952000) {
@@ -26,7 +19,7 @@ $(document).ready((event) => {
     }
   }
 
-  // Accepts tweet object returns the formatted HTML to be appended onto the tweets-container
+  //accepts tweet object and returns the formatted HTML to be appended onto the tweets-container where new tweets are displayed.
   const createTweetElement = function (tweet) {
     const $tweet = $("<article>")
       .addClass("tweetpost")
@@ -98,10 +91,8 @@ $(document).ready((event) => {
     if (data.val().length === 0) {
       $("#alert-container").css("display", "inherit");
       $(".error-message").text("You didn't write anything!");
-      // alert("Tweet is empty!")
       return false;
     } else if (data.val().length > 140) {
-      // alert("Your tweet is over 140 character limit.")
       $("#alert-container").css("display", "inherit");
       $(".error-message").text("You're over the character limit of 140");
       return false;
@@ -109,7 +100,7 @@ $(document).ready((event) => {
     return true;
   };
 
-
+  //Event handling on submit button
   $("#tweet-form").on("submit", function (event) {
     event.preventDefault();
     const data = $(this).serialize();
@@ -127,7 +118,7 @@ $(document).ready((event) => {
     };
   });
 
-    // When user scrolls down 120px from the top of the document, the scroll up button will appear
+    // When user scrolls down 120px from the top of the document, scroll up button will appear.
     $(document).on("scroll", function() {
       if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
         $("#scroll-up-btn").css("display", "block");
@@ -136,7 +127,7 @@ $(document).ready((event) => {
       }
     });
   
-    // When the scroll up button is pressed, the user is brought to the top of the document
+    // When the scroll up button is pressed, the user is brought to the top of the document.
     $("#scroll-up-btn").on("click", function() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
@@ -148,10 +139,6 @@ $(document).ready((event) => {
 
 
 
-
-// if (!validateTweetLength($("#tweet-text-area"))) {
-//   // $("#error").css("display", "inherit");
-// } else 
 
 
 

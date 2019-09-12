@@ -26,29 +26,3 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/type.png");
 }
 
-/*
-@media only screen and (max-width: 1025px) {
-  main.container {
-    width: 80%;
-    margin: auto;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #nav-bar {
-    display: flex;
-    flex-direction: column
-    justify-content: flex-start;
-  }
-
- #left-nav {
-   flex-direction: column;
-   justify-content: flex-start;
-
- }
-}
-
-*/
