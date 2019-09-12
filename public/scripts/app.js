@@ -7,6 +7,25 @@
 //DOCUMENT READY ----------------------------------------------
 $(document).ready((event) => {
 
+  const createdAt = function(time) {
+    const timeDiff = Date.now() - time;
+    if (timeDiff >= 31556952000) {
+      return `${Math.floor(timeDiff / 31556952000)} years`;
+    } else if (timeDiff >= 2592000000) {
+      return `${Math.floor(timeDiff / 2592000000)} months`;
+    } else if (timeDiff >= 604800000) {
+      return `${Math.floor(timeDiff / 604800000)} weeks`;
+    } else if (timeDiff >= 86400000) {
+      return `${Math.floor(timeDiff / 86400000)} days`;
+    } else if (timeDiff >= 3600000) {
+      return `${Math.floor(timeDiff / 3600000)} hours`;
+    } else if (timeDiff >= 60000) {
+      return `${Math.floor(timeDiff / 60000)} minutes`;
+    } else {
+      return `${Math.floor(timeDiff / 1000)} seconds`;
+    }
+  }
+
   // Accepts tweet object returns the formatted HTML to be appended onto the tweets-container
   const createTweetElement = function (tweet) {
     const $tweet = $("<article>")
@@ -37,7 +56,7 @@ $(document).ready((event) => {
               .append(
                 $("<p>")
                   .addClass("tweet-date")
-                  .text(tweet.created_at)
+                  .text(`${createdAt(tweet.created_at)} ago`) 
               ),
           ),
         $("<p>")
@@ -47,23 +66,21 @@ $(document).ready((event) => {
     return $tweet;
   };
 
+    // When the button is clicked; compose tweet box slides down
+    $(".create-new-tweet").on("click", function (event) {
+      $(".new-tweet").slideToggle("slow",function () {
+        $("#tweet-text-area").focus();
+      });
+    });
 
   const renderTweets = function (tweets) {
     //first empty container to load new tweets
-    // $("#tweet-container").empty();
+    $("#tweet-container").empty();
     tweets.forEach(item => {
       let renderTweet = createTweetElement(item);
       $("#tweet-container").prepend(renderTweet);
     });
-
   };
-
-  // When the button is clicked; compose tweet box slides down
-  $(".create-new-tweet").on("click", function (event) {
-    $(".new-tweet").slideToggle("slow",function () {
-      $("#tweet-text-area").focus();
-    });
-  });
 
   // loadTweets() renders the tweets if the GET request was successful
   const loadTweets = function () {
@@ -79,10 +96,14 @@ $(document).ready((event) => {
   //Validate the appropriate length of the tweet
   const validateTweetLength = function (data) {
     if (data.val().length === 0) {
-      alert("Tweet is empty!")
+      $("#alert-container").css("display", "inherit");
+      $(".error-message").text("You didn't write anything!");
+      // alert("Tweet is empty!")
       return false;
     } else if (data.val().length > 140) {
-      alert("Your tweet is over 140 character limit.")
+      // alert("Your tweet is over 140 character limit.")
+      $("#alert-container").css("display", "inherit");
+      $(".error-message").text("You're over the character limit of 140");
       return false;
     }
     return true;
@@ -93,16 +114,14 @@ $(document).ready((event) => {
     event.preventDefault();
     const data = $(this).serialize();
 
-    if (!validateTweetLength($("#tweet-text-area"))) {
-      // $("#error").css("display", "inherit");
-    } else if (validateTweetLength($("#tweet-text-area"))) {
+    if (validateTweetLength($("#tweet-text-area"))) {
       $.ajax('/tweets', {
         method: 'POST',
         data: data
       }).done(function (newTweet) {
         $("#tweet-text-area").val("");
         $(".counter").text(140);
-        // $("#error").css("display", "none");
+        $("#alert-container").css("display", "none");
         loadTweets();
       })
     };
@@ -130,7 +149,9 @@ $(document).ready((event) => {
 
 
 
-
+// if (!validateTweetLength($("#tweet-text-area"))) {
+//   // $("#error").css("display", "inherit");
+// } else 
 
 
 
