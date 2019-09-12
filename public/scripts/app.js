@@ -58,6 +58,13 @@ $(document).ready((event) => {
 
   };
 
+  // When the button is clicked; compose tweet box slides down
+  $(".create-new-tweet").on("click", function (event) {
+    $(".new-tweet").slideToggle("slow",function () {
+      $("#tweet-text-area").focus();
+    });
+  });
+
   // loadTweets() renders the tweets if the GET request was successful
   const loadTweets = function () {
     $.ajax({
@@ -100,5 +107,31 @@ $(document).ready((event) => {
       })
     };
   });
+
+    // When user scrolls down 120px from the top of the document, the scroll up button will appear
+    $(document).on("scroll", function() {
+      if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
+        $("#scroll-up-btn").css("display", "block");
+      } else {
+        $("#scroll-up-btn").css("display", "none");
+      }
+    });
+  
+    // When the scroll up button is pressed, the user is brought to the top of the document
+    $("#scroll-up-btn").on("click", function() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+
 });
+
+
+
+
+
+
+
+
+
 

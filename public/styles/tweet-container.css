@@ -82,3 +82,17 @@ p.tweet-date {
   color: white;
 }
 
+
+#scroll-up-btn {
+  z-index: 2000;
+  border: none;
+  background-color: transparent;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+}
+
+#scroll-up-btn:hover {
+  cursor: pointer;
+}

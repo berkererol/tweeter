@@ -49,6 +49,10 @@ button.create-new-tweet {
   /* align-self: center; */
 }
 
+button.create-new-tweet:hover {
+  background-color: #42FF00;
+}
+
 button span.name{
   font-size: 0.8em;
   font-family: "Roboto";
