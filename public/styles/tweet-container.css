@@ -1,0 +1,81 @@
+section#tweet-container {
+  display: flex;
+  flex-direction: column;
+}
+
+article.tweetpost {
+  margin-bottom: 3em;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFF99;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  width: 600px;
+  border-radius: 2em;
+  /* flex-direction: column; */
+}
+
+header.tweetpostheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00B0A6;
+  width: 600px;
+  border-top-right-radius: 2em;
+  border-top-left-radius: 2em;
+}
+
+header div.tweetpostheader-bar-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+header div.tweetpostheader-bar-right {
+  margin-right: 2em; 
+}
+
+img.post-avatar {
+  width: 42px;
+  height: 45px;
+  margin-left: 2em;
+  margin-right: 1em;
+  margin: 2em;
+}
+
+p.user-info {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  font-size: 1em;
+  margin-top: 2em;
+}
+
+span.user-name {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 2em;
+  color: #333333;
+}
+span.user-account {
+  font-family: "Roboto";
+  font-weight: 300;
+  margin: 0.2em;
+  font-size: 1.2em;
+  color: white;
+}
+
+
+p.tweetpost {
+  padding: 1em;
+  font-size: 2em;
+  font-family: "Delius Unicase";
+}
+
+p.tweet-date {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1.5em;
+  color: white;
+}

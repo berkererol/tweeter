@@ -5,7 +5,7 @@
 }
 
 
-header {
+header .profile-section {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,11 +14,11 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png"); */
 }
 
-main {
+/* main {
   display: flex;
   width: 90vw;
   justify-content: space-between;
-}
+} */
 
 .profile-section-avatar {
   display: flex;

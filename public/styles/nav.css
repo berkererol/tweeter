@@ -9,13 +9,11 @@
   height: 90px;
   top: 0;
   left: 0;
-  background-color: #99EFEA;
-  color: #000000;
+  background-color: #00B0A6;
   z-index: 100;
   font-family: "Delius Unicase";
   font-size: 24px;
   padding: 1em;
-  box-sizing: border-box;
 }
 
 #left-nav {
@@ -25,7 +23,7 @@
     align-items: center;
 }
 
-span.header {
+span#header {
   margin-left: 1em;
   font-size: 1em;
 }
@@ -53,7 +51,8 @@ button {
 
 button span.name{
   font-size: 0.8em;
-  font-family: Roboto;
+  font-family: "Roboto";
+  font-weight: 400;
   padding: 0.2em;
-  line-height: 10px; 
+  line-height: 2em; 
 }

@@ -10,13 +10,14 @@
 
   <!-- Delius Unicase and Roboto fonts from Google Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Delius+Unicase:700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
 
   <!-- External JS -->
@@ -34,12 +35,12 @@
   <nav id="nav-bar">
     <div id="left-nav">
       <img class="nav-bar-logo" id="nav-logo" src="/images/bird.png" alt="tweeter logo">
-      <span class="header">Tweeter <sup id="superior-text">&#8482</sup></span>
+      <span id="header">Tweeter <sup id="superior-text">&#8482</sup></span>
     </div>
     <div id="right-nav">
       <button type="button" class="button" input="click">
         <span class="name">
-          <b>Write</b> a new tweet
+          <b>write</b> a new tweet
         </span>
       </button>
     </div>
@@ -52,21 +53,24 @@
       <img id="avatar" src="/images/profile-hex.png" alt="profile-picture">
     </div>
     <div class="profile-section-user">
-      <span class="login-info"><strong>logged in as<strong> Berker</span>
+      <span class="login-info">logged in as Berker</span>
     </div>
   </header>
 
 
   <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet 🐤 </h2>
-      <form action="/tweets" method="POST">
-        <textarea id="tweet-text-area" name="text" placeholder="What are you humming about?"> </textarea>
-        <input type="submit" value="Tweet">
-        <span class="counter">140</span>
-      </form>
+      <p id="new-tweet-title">tweet your mind 🐤 </h2>
+        <form action="/tweets" method="POST">
+          <textarea id="tweet-text-area" name="text" placeholder="What are you humming about?"> </textarea>
+          <input type="submit" value="tweet!">
+          <span class="counter">140</span>
+        </form>
     </section>
-    <section id="tweet-container"> </section>
+
+    <section id="tweet-container">
+
+    </section>
 
   </main>
 
