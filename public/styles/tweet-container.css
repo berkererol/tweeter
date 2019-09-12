@@ -6,7 +6,7 @@ section#tweet-container {
 article.tweetpost {
   margin-bottom: 3em;
   display: block;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   background-color: #FFFF99;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
@@ -58,6 +58,7 @@ span.user-name {
   font-size: 2em;
   color: #333333;
 }
+
 span.user-account {
   font-family: "Roboto";
   font-weight: 300;
@@ -71,6 +72,7 @@ p.tweetpost {
   padding: 1em;
   font-size: 2em;
   font-family: "Delius Unicase";
+  overflow-wrap: break-word;
 }
 
 p.tweet-date {
@@ -79,3 +81,4 @@ p.tweet-date {
   font-size: 1.5em;
   color: white;
 }
+

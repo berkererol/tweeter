@@ -1,11 +1,10 @@
 #avatar {
   width: 120px;
   margin-top: 2em;
-  
 }
 
 
-header .profile-section {
+header.profile-section {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -47,4 +46,3 @@ span.login-info {
   padding: 1em;
   border-radius: 1em;
 }
-

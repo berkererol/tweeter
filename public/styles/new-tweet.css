@@ -1,4 +1,4 @@
-main .container {
+main.container {
   float: flex;
   flex-direction: column;
   align-content: center;
@@ -13,12 +13,11 @@ section.new-tweet {
   margin-bottom: 3em;
 }
 
-.new-tweet textarea {
+#tweet-text-area {
   justify-content: center;
   background-color: #FFFF99;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   border: none;
-  /* border-bottom: 5px solid #000000; */
   width: 100%;
   font-size: 2em;
   height: 6em;
@@ -67,4 +66,13 @@ p#new-tweet-title {
   margin-top: 1.5em;
   margin-right: 1.5em;
   font-size: 2em;
+}
+
+span#error {
+  display: none;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1em;
+  margin-left: 0.5em;
+  color: red;
 }
