@@ -10,7 +10,7 @@ article.tweetpost {
   flex-direction: column;
   background-color: #FFFF99;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-  width: 600px;
+  width: auto;
   border-radius: 2em;
   /* flex-direction: column; */
 }
@@ -25,7 +25,7 @@ header.tweetpostheader {
   justify-content: space-between;
   align-items: center;
   background-color: #00B0A6;
-  width: 600px;
+  width: auto;
   border-top-right-radius: 2em;
   border-top-left-radius: 2em;
 }
